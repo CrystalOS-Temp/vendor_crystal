@@ -1,10 +1,10 @@
-<img src="https://github.com/ArrowOS/getting_started/blob/master/misc/logo.png?raw=true">
+<img src="https://github.com/CrystalOS/getting_started/blob/master/misc/logo.png?raw=true">
 
-# ArrowOS
+# CrystalOS
 
  Getting Started
 ---------------
-To get started with the ArrowOS sources, you'll need to get
+To get started with the CrystalOS sources, you'll need to get
 familiar with:
 
  [Git and Repo](https://source.android.com/setup/build/downloading)
@@ -14,7 +14,7 @@ familiar with:
 To initialize your local repository, use command:
 
 ```bash
-    repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-9.x
+    repo init -u https://github.com/CrystalOS/android_manifest.git -b crystal-9.x
 ```
 
 Then sync up:
@@ -26,9 +26,9 @@ Where X is the thread your CPU can handle.
 
 For building instructions, please check :
 
-[ How to Compile ArrowOS from source for your Android Device](https://blog.arrowos.net/posts/compilation-guide)
+[ How to Compile CrystalOS from source for your Android Device](https://blog.crystalos.net/posts/compilation-guide)
 
 To apply for maintainership, please check :
 
-[Apply for Official Maintainership](https://blog.arrowos.net/posts/apply-for-maintainership)
+[Apply for Official Maintainership](https://blog.crystalos.net/posts/apply-for-maintainership)
 

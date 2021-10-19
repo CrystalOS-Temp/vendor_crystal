@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2020 ArrowOS
+# Copyright (C) 2018-2020 CrystalOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,16 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/arrow/config/version.mk
+include vendor/crystal/config/version.mk
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/arrow/overlay/common
+    vendor/crystal/overlay/common
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/arrow/overlay/themes/ArrowIcons
+    vendor/crystal/overlay/themes/CrystalIcons
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    vendor/arrow/overlay/common \
+    vendor/crystal/overlay/common \
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -30,7 +30,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/arrow/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/crystal/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -42,19 +42,19 @@ PRODUCT_COPY_FILES += \
 
 # init file
 PRODUCT_COPY_FILES += \
-    vendor/arrow/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.arrow.rc
+    vendor/crystal/prebuilt/common/etc/init.local.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.crystal.rc
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/arrow/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/arrow/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/arrow/build/tools/50-arrow.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-arrow.sh
+    vendor/crystal/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/crystal/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/crystal/build/tools/50-crystal.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-crystal.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/arrow/build/tools/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/arrow/build/tools/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/arrow/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/crystal/build/tools/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/crystal/build/tools/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/crystal/build/tools/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -67,11 +67,11 @@ PRODUCT_COPY_FILES += \
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    vendor/arrow/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+    vendor/crystal/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/arrow/prebuilt/common/etc/sysconfig/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
+    vendor/crystal/prebuilt/common/etc/sysconfig/custom-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/custom-power-whitelist.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -96,16 +96,16 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Bootanimation
-include vendor/arrow/config/bootanimation.mk
+include vendor/crystal/config/bootanimation.mk
 
 # Fonts
-include vendor/arrow/config/fonts.mk
+include vendor/crystal/config/fonts.mk
 
 # Packages
-include vendor/arrow/config/packages.mk
+include vendor/crystal/config/packages.mk
 
 # Props
-include vendor/arrow/config/props.mk
+include vendor/crystal/config/props.mk
 
 # Sounds
-include vendor/arrow/config/sounds.mk
+include vendor/crystal/config/sounds.mk
