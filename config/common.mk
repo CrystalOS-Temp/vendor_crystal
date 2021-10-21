@@ -95,8 +95,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
-ifneq ($(wildcard ./system/core/libunwindstack/tests/files/IsOreBuild.mk),)
-    $(call inherit-product-if-exists, system/core/libunwindstack/tests/files/IsOreBuild.mk)
+ifneq ($(wildcard ./system/core/libsystem/include/system/IsOreBuild.mk),)
+    $(call inherit-product-if-exists, system/core/libsystem/include/system/IsOreBuild.mk)
 else
     CRYSTAL_BUILD_TYPE := ARGENT
 endif
