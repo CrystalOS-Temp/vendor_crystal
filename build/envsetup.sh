@@ -85,6 +85,7 @@ function breakfast()
             lunch crystal_$target-$variant
         fi
     fi
+    export TEMPORARY_DISABLE_PATH_RESTRICTIONS=false
     return $?
 }
 
