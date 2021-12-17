@@ -102,7 +102,7 @@ else
 endif
 
 ifeq (CRYSTAL_PURITY,GAPPS)
-$(call inherit-product, vendor/gapps/common/gapps.mk
+$(call inherit-product, vendor/gapps/common/gapps.mk)
 endif
 
 # Bootanimation
