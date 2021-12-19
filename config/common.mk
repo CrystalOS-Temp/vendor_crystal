@@ -101,7 +101,7 @@ else
     CRYSTAL_BUILD_TYPE := ARGENT
 endif
 
-ifeq (CRYSTAL_PURITY,GAPPS)
+ifeq ($(CRYSTAL_PURITY),GAPPS)
 $(call inherit-product, vendor/gapps/common/gapps.mk)
 endif
 
