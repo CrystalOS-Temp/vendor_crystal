@@ -101,7 +101,7 @@ else
     $(call inherit-product, system/core/build/UnofficialBuild.mk)
 endif
 
-ifeq ($(CRYSTAL_PURITY,GAPPS),)
+ifeq ($(CRYSTAL_PURITY),GAPPS)
 $(call inherit-product, vendor/gapps/common/gapps.mk)
 endif
 
