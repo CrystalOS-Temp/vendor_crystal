@@ -95,13 +95,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
-ifneq ($(wildcard ./system/core/libsystem/include/system/IsOreBuild.mk),)
-    $(call inherit-product-if-exists, system/core/libsystem/include/system/IsOreBuild.mk)
+ifneq ($(wildcard ./system/core/build/OfficialBuild.mk),)
+    $(call inherit-product-if-exists, system/core/build/OfficialBuild.mk)
 else
-    CRYSTAL_BUILD_TYPE := ARGENT
+    $(call inherit-product, system/core/build/UnofficialBuild.mk)
 endif
 
-ifeq (CRYSTAL_PURITY,GAPPS)
+ifeq ($(CRYSTAL_PURITY,GAPPS),)
 $(call inherit-product, vendor/gapps/common/gapps.mk)
 endif
 
