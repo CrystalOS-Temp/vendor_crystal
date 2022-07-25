@@ -16,7 +16,11 @@ include vendor/crystal/config/version.mk
 
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/crystal/overlay/common
+# APPLock
+PRODUCT_COPY_FILES += \
+    vendor/crystal/config/permissions/privapp-permissions-settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-settings.xml
 
+# Themes
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/crystal/overlay/themes/CrystalIcons
 
