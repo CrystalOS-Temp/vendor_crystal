@@ -68,6 +68,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
+ifeq ($(CRYSTAL_PURITY),FGAPPS)
+	PRODUCT_PACKAGE_OVERLAYS += \
+		$(LOCAL_PATH)/../gapps_overlays/full
+else ifeq ($(CRYSTAL_PURITY),MGAPPS)
+	PRODUCT_PACKAGE_OVERLAYS += \
+		$(LOCAL_PATH)/../gapps_overlays/mini
+endif
+
 # GBoard
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=1
