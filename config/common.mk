@@ -117,6 +117,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.ab-ota=quicken
 endif
 
+TARGET_ENABLE_OOS_GBOARD_PADDINGS ?=false
+ifeq ($(TARGET_ENABLE_OOS_GBOARD_PADDINGS), true)
+# Gboard
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.ime.kb_pad_port_b=1
+
+# Gboard side padding (OOS)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.ime.kb_pad_port_l=7 \
+    ro.com.google.ime.kb_pad_port_r=7 \
+    ro.com.google.ime.kb_pad_land_l=14 \
+    ro.com.google.ime.kb_pad_land_r=14
+endif
+
 # Hide nav Overlays
 PRODUCT_PACKAGES += \
     NavigationBarModeGesturalOverlayFS 
