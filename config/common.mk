@@ -132,6 +132,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_land_r=14
 endif
 
+ifeq ($(TARGET_DISABLE_GRALLOC2_P010_SUPPORT), true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.gralloc.disablep010?=true
+endif
+
 # Hide nav Overlays
 PRODUCT_PACKAGES += \
     NavigationBarModeGesturalOverlayFS 
