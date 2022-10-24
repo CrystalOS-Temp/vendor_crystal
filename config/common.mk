@@ -108,14 +108,14 @@ else ifeq ($(CRYSTAL_PURITY),MGAPPS)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.boot=verify \
-    pm.dexopt.first-boot=quicken \
-    pm.dexopt.install=speed-profile \
-    pm.dexopt.bg-dexopt=everything
+    pm.dexopt.boot?=verify \
+    pm.dexopt.first-boot?=quicken \
+    pm.dexopt.install?=speed-profile \
+    pm.dexopt.bg-dexopt?=everything
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.ab-ota=quicken
+    pm.dexopt.ab-ota?=quicken
 endif
 
 TARGET_ENABLE_OOS_GBOARD_PADDINGS ?=false
