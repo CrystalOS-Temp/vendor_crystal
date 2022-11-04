@@ -107,6 +107,11 @@ else ifeq ($(CRYSTAL_PURITY),MGAPPS)
     $(call inherit-product, vendor/gapps/gapps_mini.mk)
 endif
 
+# Enable whole-program R8 Java optimizations for SystemUI and system_server,
+# but also allow explicit overriding for testing and development.
+SYSTEM_OPTIMIZE_JAVA ?= true
+SYSTEMUI_OPTIMIZE_JAVA ?= true
+
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.boot?=verify \
     pm.dexopt.first-boot?=quicken \
