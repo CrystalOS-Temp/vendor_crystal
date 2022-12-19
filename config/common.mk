@@ -165,3 +165,10 @@ include vendor/crystal/config/props.mk
 
 # Sounds
 include vendor/crystal/config/sounds.mk
+
+# Enable ThinLTO Source wide Conditionally.
+ifeq ($(TARGET_BUILD_WITH_LTO),true)
+GLOBAL_THINLTO := true
+USE_THINLTO_CACHE := true
+SKIP_ABI_CHECKS := true
+endif
